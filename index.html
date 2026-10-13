@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TT INDUSTRIES - Thiết Bị Công Nghiệp & Tự Động Hóa Chuyên Nghiệp</title>
+  <meta name="description" content="T&T Industries thành lập từ năm 2011, chuyên cung cấp thiết bị công nghiệp, thiết bị thủy lực, khí nén, bạc đạn, dây belt, phớt làm kín, lọc công nghiệp." />
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #0056b3;
+      --primary-dark: #003d82;
+      --secondary: #d32f2f;
+      --accent: #ff9800;
+      --dark: #222222;
+      --gray-light: #f4f6f9;
+      --border-color: #e5e7eb;
+      --text: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      background-color: #1a252f;
+      color: #ccc;
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px solid #2c3e50;
+    }
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-contact span {
+      margin-right: 20px;
+    }
+    .topbar-contact i {
+      color: var(--accent);
+      margin-right: 5px;
+    }
+    .topbar-links a {
+      color: #eee;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    .topbar-links a:hover {
+      color: var(--accent);
+    }
+
+    /* HEADER */
+    header {
+      padding: 15px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .logo-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .search-bar {
+      flex: 1;
+      max-width: 480px;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 10px 45px 10px 15px;
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      outline: none;
+      font-size: 14px;
+    }
+    .search-bar button {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .hotline-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hotline-badge i {
+      font-size: 26px;
+      color: var(--secondary);
+    }
+    .hotline-badge .phone-num {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    .cart-btn {
+      position: relative;
+      cursor: pointer;
+      font-size: 20px;
+      color: var(--primary-dark);
+      padding: 8px;
+    }
+    .cart-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--secondary);
+      color: #fff;
+      font-size: 11px;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* NAVBAR */
+    nav.main-nav {
+      background-color: var(--primary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-menu {
+      display: flex;
+    }
+    .nav-menu > li {
+      position: relative;
+    }
+    .nav-menu > li > a {
+      display: block;
+      padding: 14px 20px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+    .nav-menu > li > a:hover,
+    .nav-menu > li.active > a {
+      background-color: var(--primary-dark);
+    }
+    /* DROPDOWN */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      min-width: 260px;
+      display: none;
+      border-top: 3px solid var(--accent);
+      z-index: 99;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 10px 18px;
+      color: #333;
+      font-size: 14px;
+      border-bottom: 1px solid #f1f1f1;
+      transition: all 0.2s;
+    }
+    .dropdown li a:hover {
+      background: #f8f9fa;
+      color: var(--primary);
+      padding-left: 24px;
+    }
+    .nav-menu > li:hover .dropdown {
+      display: block;
+    }
+
+    /* HERO BANNER */
+    .hero {
+      background: linear-gradient(rgba(10, 30, 60, 0.8), rgba(10, 30, 60, 0.85)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1500&q=80') center/cover;
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 17px;
+      max-width: 850px;
+      margin: 0 auto 30px;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .hero-badge-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--secondary);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 35px;
+      border-radius: 25px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(211,47,47,0.4);
+    }
+    .btn-cta:hover {
+      background: #b71c1c;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      text-align: center;
+      margin: 50px 0 35px;
+      position: relative;
+    }
+    .section-title h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: var(--secondary);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* PRODUCT GRID */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+    .product-img {
+      height: 200px;
+      background: #fdfdfd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 15px;
+    }
+    .product-img img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .product-info {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-cat {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      height: 44px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 12px;
+    }
+    .btn-quote {
+      background: var(--primary);
+      color: #fff;
+      padding: 7px 15px;
+      font-size: 13px;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+    .btn-quote:hover {
+      background: var(--primary-dark);
+    }
+
+    /* NEWS SECTION */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .news-card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .news-img {
+      height: 180px;
+      background: #eceff1;
+      overflow: hidden;
+    }
+    .news-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .news-card:hover .news-img img {
+      transform: scale(1.05);
+    }
+    .news-content {
+      padding: 18px;
+    }
+    .news-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .news-title a:hover {
+      color: var(--primary);
+    }
+    .news-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111a24;
+      color: #a0aec0;
+      padding: 60px 0 20px;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h3 {
+      color: #fff;
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+    .footer-col p {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    .footer-col i {
+      color: var(--accent);
+      margin-right: 8px;
+      width: 16px;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a:hover {
+      color: #fff;
+      padding-left: 5px;
+      transition: 0.2s;
+    }
+    .footer-bottom {
+      border-top: 1px solid #233142;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #718096;
+    }
+
+    /* FLOATING BUTTONS */
+    .floating-buttons {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+    .float-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+    }
+    .float-btn.phone {
+      background-color: #e53935;
+    }
+    .float-btn.zalo {
+      background-color: #0088ff;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7); }
+      70% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(229, 57, 53, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
+    }
+
+    /* MODAL ĐĂNG NHẬP */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #fff;
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .close-modal {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal h3 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--primary);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn-login {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .header-content { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; margin-top: 10px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .topbar-content { flex-direction: column; gap: 5px; text-align: center; }
+      .nav-menu { flex-direction: column; width: 100%; display: none; }
+      .nav-menu.show { display: block; }
+      .mobile-menu-btn { display: block !important; }
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-contact">
+        <span><i class="fas fa-phone-alt"></i> Hotline: <strong>0932 084 199</strong></span>
+        <span><i class="fas fa-envelope"></i> sales@ttindustries.com.vn</span>
+      </div>
+      <div class="topbar-links">
+        <a onclick="openModal()"><i class="fas fa-user"></i> Đăng nhập</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. HEADER -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-badge">T&T</div>
+        <div>
+          <div class="logo-title">TT INDUSTRIES</div>
+          <div class="logo-sub">Thiết Bị Công Nghiệp Uy Tín</div>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm đồng hồ áp suất, phớt làm kín, bạc đạn..." />
+        <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <div class="hotline-badge">
+          <i class="fas fa-headset"></i>
+          <div>
+            <div style="font-size: 11px; color: #777;">Tư vấn kỹ thuật</div>
+            <div class="phone-num">0932 084 199</div>
+          </div>
+        </div>
+        <div class="cart-btn" onclick="alert('Giỏ hàng hiện chưa có sản phẩm!')">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. MAIN NAVIGATION -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i> Danh mục</button>
+      <ul class="nav-menu" id="mainMenu">
+        <li class="active"><a href="#home">Trang Chủ</a></li>
+        <li><a href="#about">Giới Thiệu</a></li>
+        <li>
+          <a href="#products">Sản Phẩm <i class="fas fa-angle-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#products">Đồng Hồ Áp Suất</a></li>
+            <li><a href="#products">Dây Belt Công Nghiệp</a></li>
+            <li><a href="#products">Bạc Đạn Công Nghiệp</a></li>
+            <li><a href="#products">Phớt Làm Kín Công Nghiệp</a></li>
+            <li><a href="#products">Lọc Công Nghiệp</a></li>
+            <li><a href="#products">Phốt Bơm Công Nghiệp</a></li>
+          </ul>
+        </li>
+        <li><a href="#news">Tin Tức</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 4. HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Giải Pháp Thiết Bị Công Nghiệp Toàn Diện</h1>
+      <p>
+        Được thành lập từ năm 2011, <strong>CÔNG TY TNHH MTV THIẾT BỊ CÔNG NGHIỆP T&T</strong> chuyên cung cấp thiết bị công nghiệp, thủy lực, khí nén, tự động hóa và các giải pháp phụ trợ nhà xưởng chuẩn quốc tế.
+      </p>
+      <div class="hero-badges">
+        <div class="hero-badge-item"><i class="fas fa-cogs"></i> Dịch vụ cơ khí chính xác</div>
+        <div class="hero-badge-item"><i class="fas fa-microchip"></i> Dịch vụ giải pháp công nghệ</div>
+        <div class="hero-badge-item"><i class="fas fa-check-circle"></i> Sản phẩm chính hãng 100%</div>
+      </div>
+      <a href="#products" class="btn-cta">Xem Danh Mục Sản Phẩm</a>
+    </div>
+  </section>
+
+  <!-- 5. PRODUCTS SECTION -->
+  <section class="container" id="products">
+    <div class="section-title">
+      <h2>Sản Phẩm Tiêu Biểu</h2>
+    </div>
+    
+    <div class="products-grid" id="productGrid">
+      <!-- Sản phẩm 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" alt="Đồng Hồ Đo Áp Wika" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Đồng Hồ Áp Suất</div>
+            <div class="product-name">Đồng Hồ Đo Áp Wika 232.50, 233.50</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Đồng Hồ Đo Áp Wika 232.50')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="Đồng Hồ Áp Suất Wika" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Đồng Hồ Áp Suất</div>
+            <div class="product-name">Đồng Hồ Áp Suất Wika 111.10, 111.12</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Đồng Hồ Áp Suất Wika 111.10')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=400&q=80" alt="Phớt làm kín SKF" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Phớt Làm Kín Công Nghiệp</div>
+            <div class="product-name">Phớt làm kín SKF 32514 chính hãng</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Phớt SKF 32514')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=400&q=80" alt="Phớt làm kín TCM" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Phớt Làm Kín Công Nghiệp</div>
+            <div class="product-name">Phớt làm kín TCM 162273SA-H-BX</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Phớt TCM 162273SA')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 5 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="Đồng Hồ Đo Áp Suất DPG-BD" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Đồng Hồ Áp Suất</div>
+            <div class="product-name">Đồng Hồ Đo Áp Suất DPG-BD / DPG-B</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Đồng Hồ Đo Áp DPG-BD')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 6 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" alt="Đồng Hồ Đo Áp HYG" />
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="product-cat">Đồng Hồ Áp Suất</div>
+            <div class="product-name">Đồng Hồ Đo Áp Suất HYG / MPG / SFBSPG</div>
+          </div>
+          <div class="product-meta">
+            <span style="color: var(--secondary); font-weight: 700;">Liên hệ</span>
+            <button class="btn-quote" onclick="requestQuote('Đồng Hồ HYG/MPG')">Báo giá</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. NEWS SECTION -->
+  <section class="container" id="news">
+    <div class="section-title">
+      <h2>Tin Tức & Hoạt Động Ngành</h2>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img">
+          <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=500&q=80" alt="Ngành nhựa" />
+        </div>
+        <div class="news-content">
+          <h3 class="news-title"><a href="#">“Xanh hoá” ngành nhựa để tăng lợi thế cạnh tranh</a></h3>
+          <p class="news-desc">Đánh giá về ngành nhựa, đại diện hiệp hội cho biết quy chuẩn kỹ thuật và giảm thiểu khí thải đang trở thành yếu tố sống còn...</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=500&q=80" alt="Triển lãm công nghiệp" />
+        </div>
+        <div class="news-content">
+          <h3 class="news-title"><a href="#">Triển lãm quốc tế Vietnam Cycle & Thiết bị phụ trợ</a></h3>
+          <p class="news-desc">Khu vực trưng bày công nghệ cơ khí phụ trợ và chuỗi cung ứng linh kiện chất lượng cao thu hút đông đảo đối tác tham dự...</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-img">
+          <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=80" alt="Ngành thép" />
+        </div>
+        <div class="news-content">
+          <h3 class="news-title"><a href="#">Phát triển ngành thép Việt Nam theo hướng nào?</a></h3>
+          <p class="news-desc">Kiến nghị các giải pháp đầu tư máy móc tự động hóa, tăng cường kiểm soát áp suất và bảo dưỡng hệ thống cơ khí dài hạn...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Cột 1: Thông tin pháp nhân -->
+        <div class="footer-col" id="about">
+          <h3>Về Chúng Tôi</h3>
+          <p><strong>CÔNG TY TNHH MTV THIẾT BỊ CÔNG NGHIỆP T&T</strong></p>
+          <p><i class="fas fa-map-marker-alt"></i> 30/1E, Đường số 45, KP2, P. Hiệp Bình Chánh, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+          <p><i class="fas fa-id-card"></i> MST: 0310996077</p>
+          <p><i class="fas fa-phone"></i> Điện thoại bàn: 028-62771708</p>
+          <p><i class="fas fa-globe"></i> Website: www.ttindustries.com.vn</p>
+        </div>
+
+        <!-- Cột 2: Hotline kinh doanh -->
+        <div class="footer-col">
+          <h3>Thông Tin Liên Hệ</h3>
+          <p><strong>Phòng Kinh Doanh & Kỹ Thuật:</strong></p>
+          <p><i class="fas fa-user"></i> Hotline: <strong style="color: #fff;">0932 084 199</strong> (Mr Quyết)</p>
+          <p><i class="fas fa-envelope"></i> Email: sales@ttindustries.com.vn</p>
+          <br/>
+          <p><i class="fas fa-user"></i> Hotline: <strong style="color: #fff;">0972 150 257</strong> (Ms Tuyền)</p>
+          <p><i class="fas fa-envelope"></i> Email: sales1@ttindustries.com.vn</p>
+        </div>
+
+        <!-- Cột 3: Danh mục liên kết -->
+        <div class="footer-col">
+          <h3>Chia Sẻ & Giải Pháp</h3>
+          <ul class="footer-links">
+            <li><a href="#about"><i class="fas fa-chevron-right"></i> Về Chúng Tôi</a></li>
+            <li><a href="#products"><i class="fas fa-chevron-right"></i> Thiết Bị Thủy Lực & Khí Nén</a></li>
+            <li><a href="#products"><i class="fas fa-chevron-right"></i> Bạc Đạn & Dây Belt</a></li>
+            <li><a href="#products"><i class="fas fa-chevron-right"></i> Phớt Làm Kín SKF & TCM</a></li>
+            <li><a href="#news"><i class="fas fa-chevron-right"></i> Tin Tức Công Nghiệp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 TT INDUSTRIES (T&T INDUSTRIES CO.). All rights reserved. Triển khai trên GitHub Pages.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. FLOATING BUTTONS (Zalo & Điện thoại nhanh) -->
+  <div class="floating-buttons">
+    <a href="tel:0932084199" class="float-btn phone" title="Gọi Hotline: 0932 084 199">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://zalo.me/0932084199" target="_blank" class="float-btn zalo" title="Chat Zalo">
+      Zalo
+    </a>
+  </div>
+
+  <!-- 9. MODAL ĐĂNG NHẬP -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3>Đăng Nhập Hệ Thống</h3>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Tên tài khoản hoặc Email *</label>
+          <input type="text" required placeholder="Nhập email của bạn..." />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu *</label>
+          <input type="password" required placeholder="Nhập mật khẩu..." />
+        </div>
+        <button type="submit" class="btn-login">Đăng Nhập</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Menu mobile
+    function toggleMenu() {
+      const menu = document.getElementById('mainMenu');
+      menu.classList.toggle('show');
+    }
+
+    // Modal đăng nhập
+    function openModal() {
+      document.getElementById('loginModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+    function handleLogin(e) {
+      e.preventDefault();
+      alert('Đăng nhập thành công!');
+      closeModal();
+    }
+
+    // Tìm kiếm đơn giản
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (!query) {
+        alert('Vui lòng nhập từ khóa tìm kiếm.');
+        return;
+      }
+      alert('Đang tìm kiếm sản phẩm: ' + query);
+    }
+
+    // Nút báo giá
+    function requestQuote(productName) {
+      const confirmContact = confirm(`Bạn muốn nhận báo giá cho sản phẩm: "${productName}"?\nLiên hệ ngay Hotline: 0932 084 199 (Mr Quyết)`);
+      if (confirmContact) {
+        window.location.href = "tel:0932084199";
+      }
+    }
+  </script>
+</body>
+</html>
